@@ -15,42 +15,42 @@ class LibriVoxService implements LibriVox
     use Helpers;
 
     /**
-     * Resource where you will search
+     * Resource where you will search.
      *
      * @var string
      */
     protected static $resource = null;
 
     /**
-     * Fields to return
+     * Fields to return.
      *
      * @var array
      */
     protected $fields = [];
 
     /**
-     * Resource where you will search
+     * Resource where you will search.
      *
      * @var string
      */
     protected $format = 'json';
 
     /**
-     * Query offset
+     * Query offset.
      *
      * @var int
      */
     protected $offset = 0;
 
     /**
-     * Query limit
+     * Query limit.
      *
      * @var int
      */
     protected $limit = 0;
 
     /**
-     * Return the full set of data
+     * Return the full set of data.
      *
      * @var bool
      */
@@ -171,10 +171,11 @@ class LibriVoxService implements LibriVox
     /**
      * @inheritdoc
      *
+     * @param array $excludeKeys
      * @return Collection|null
      * @throws GuzzleException
      */
-    public function fetchData()
+    public function fetchData(array $excludeKeys)
     {
         $client = new Client();
 
@@ -187,7 +188,7 @@ class LibriVoxService implements LibriVox
             $response = json_decode($request->getBody()->getContents(), true);
 
             // Keys that will be removed from the response returned by the server
-            $excludeKeys = ['id', 'reader_id'];
+            $excludeKeys = array_merge($excludeKeys, ['id', 'reader_id']);
         } catch (Exception $exception) {
             return null;
         }

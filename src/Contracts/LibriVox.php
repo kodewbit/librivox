@@ -74,8 +74,9 @@ interface LibriVox
     /**
      * Fetch data.
      *
+     * @param array $excludeKeys
      * @return Collection|null
      * @throws GuzzleException
      */
-    public function fetchData();
+    public function fetchData(array $excludeKeys);
 }
