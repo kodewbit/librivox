@@ -1,6 +1,6 @@
 <?php
 
-namespace Kodewbit\Booklets\Contracts;
+namespace Kodewbit\LibriVox\Contracts;
 
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Collection;

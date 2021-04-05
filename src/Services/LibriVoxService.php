@@ -1,13 +1,13 @@
 <?php
 
-namespace Kodewbit\Booklets\Services;
+namespace Kodewbit\LibriVox\Services;
 
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Collection;
-use Kodewbit\Booklets\Contracts\LibriVox;
-use Kodewbit\Booklets\Traits\Helpers;
+use Kodewbit\LibriVox\Contracts\LibriVox;
+use Kodewbit\LibriVox\Traits\Helpers;
 use SimpleXMLElement;
 
 class LibriVoxService implements LibriVox

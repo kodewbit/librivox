@@ -1,12 +1,12 @@
 <?php
 
-namespace Kodewbit\Booklets;
+namespace Kodewbit\LibriVox;
 
 use Illuminate\Support\ServiceProvider;
-use Kodewbit\Booklets\Contracts\LibriVox;
-use Kodewbit\Booklets\Services\LibriVoxService;
+use Kodewbit\LibriVox\Contracts\LibriVox;
+use Kodewbit\LibriVox\Services\LibriVoxService;
 
-class BookletsServiceProvider extends ServiceProvider
+class LibriVoxServiceProvider extends ServiceProvider
 {
     /**
      * @inheritdoc

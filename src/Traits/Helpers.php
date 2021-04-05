@@ -1,6 +1,6 @@
 <?php
 
-namespace Kodewbit\Booklets\Traits;
+namespace Kodewbit\LibriVox\Traits;
 
 trait Helpers
 {

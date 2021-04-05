@@ -1,5 +1,5 @@
 {
-    "name": "kodewbit/booklets",
+    "name": "kodewbit/librivox",
     "description": "A small library to obtain data from the books hosted on LibriVox.",
     "keywords": ["librivox", "api"],
     "type": "library",
@@ -17,13 +17,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Kodewbit\\Booklets\\": "src/"
+            "Kodewbit\\LibriVox\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Kodewbit\\Booklets\\BookletsServiceProvider"
+                "Kodewbit\\LibriVox\\LibriVoxServiceProvider"
             ]
         }
     },
