@@ -195,4 +195,32 @@ class LibriVoxService implements LibriVox
 
         return collect($this->recursiveUnset($response, $excludeKeys))->collapse();
     }
+
+    /**
+     * @inheritdoc
+     *
+     * @param $book
+     * @return mixed|null
+     * @throws GuzzleException
+     */
+    public function fetchThumbnail(string $book)
+    {
+        $client = new Client();
+
+        try {
+            $request = $client->get("https://archive.org/details/$book", [
+                'query' => [
+                    'output' => 'json'
+                ]
+            ]);
+
+            // Decode the JSON returned by the server and convert it to an associative array
+            $response = json_decode($request->getBody()->getContents(), true);
+
+        } catch (Exception $exception) {
+            return null;
+        }
+
+        return is_array($response) && array_key_exists('misc', $response) ? $response['misc']['image'] : null;
+    }
 }
