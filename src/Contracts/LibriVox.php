@@ -78,7 +78,7 @@ interface LibriVox
      * @return Collection|null
      * @throws GuzzleException
      */
-    public function fetchData(array $excludeKeys);
+    public function fetchData(array $excludeKeys = []);
 
     /**
      * Get a book thumbnail from iarchive.com

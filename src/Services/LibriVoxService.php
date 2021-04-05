@@ -175,7 +175,7 @@ class LibriVoxService implements LibriVox
      * @return Collection|null
      * @throws GuzzleException
      */
-    public function fetchData(array $excludeKeys)
+    public function fetchData(array $excludeKeys = [])
     {
         $client = new Client();
 
