@@ -3,8 +3,7 @@
 namespace Kodewbit\LibriVox;
 
 use Illuminate\Support\ServiceProvider;
-use Kodewbit\LibriVox\Contracts\LibriVox;
-use Kodewbit\LibriVox\Services\LibriVoxService;
+use Kodewbit\LibriVox\Contracts\LibriVox as LibriVoxInterface;
 
 class LibriVoxServiceProvider extends ServiceProvider
 {
@@ -35,6 +34,6 @@ class LibriVoxServiceProvider extends ServiceProvider
      */
     private function configureBindings()
     {
-        $this->app->bind(LibriVox::class, LibriVoxService::class);
+        $this->app->bind(LibriVoxInterface::class, LibriVox::class);
     }
 }
