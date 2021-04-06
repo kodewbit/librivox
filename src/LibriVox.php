@@ -159,7 +159,7 @@ class LibriVox implements LibriVoxInterface
         try {
             $request = $client->get($book->url_rss);
 
-            // Replace some text strings to avoid problems when converting the XML
+            // Replace some text strings to avoid problems when converting the XML.
             $response = str_replace('itunes:', '', $request->getBody()->getContents());
 
             return simplexml_load_string($response, null, LIBXML_NOCDATA);
@@ -184,10 +184,10 @@ class LibriVox implements LibriVoxInterface
                 'query' => http_build_query(get_object_vars($this))
             ]);
 
-            // Decode the JSON returned by the server and convert it to an associative array
+            // Decode the JSON returned by the server and convert it to an associative array.
             $response = json_decode($request->getBody()->getContents(), true);
 
-            // Keys that will be removed from the response returned by the server
+            // Keys that will be removed from the response returned by the server.
             $excludeKeys = array_merge($excludeKeys, ['id', 'reader_id']);
         } catch (Exception $exception) {
             return null;
@@ -214,7 +214,7 @@ class LibriVox implements LibriVoxInterface
                 ]
             ]);
 
-            // Decode the JSON returned by the server and convert it to an associative array
+            // Decode the JSON returned by the server and convert it to an associative array.
             $response = json_decode($request->getBody()->getContents(), true);
 
         } catch (Exception $exception) {
