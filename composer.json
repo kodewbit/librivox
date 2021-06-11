@@ -1,7 +1,10 @@
 {
     "name": "kodewbit/librivox",
     "description": "A small library to obtain data from the books hosted on LibriVox.",
-    "keywords": ["librivox", "api"],
+    "keywords": [
+        "librivox",
+        "api"
+    ],
     "type": "library",
     "license": "MIT",
     "authors": [
